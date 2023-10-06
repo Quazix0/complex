@@ -114,5 +114,16 @@ void test_io()
     assert(ss_c4.str() == "4 + 2.5i");
     assert(ss_c5.str() == "-3.5 + 1.1i");
 
-    std::cout << "Output have been tested succesfully." << std::endl;
+    std::string s1 = "1 3", s2 = " -2 5.5", s3 = "14.1 -0.01", s4 = "0 1", s5 = "1.6 2.2";
+    std::stringstream ss1 (s1), ss2 (s2), ss3 (s3), ss4 (s4), ss5 (s5);
+    complex n1, n2, n3, n4, n5;
+    ss1 >> n1; ss2 >> n2; ss3 >> n3; ss4 >> n4; ss5 >> n5;
+
+    assert(n1 == complex(1, 3));
+    assert(n2 == complex(-2, 5.5));
+    assert(n3 == complex(14.1, -0.01));
+    assert(n4 == complex(0, 1));
+    assert(n5 == complex(1.6, 2.2));
+
+    std::cout << "Input and output have been tested succesfully." << std::endl;
 }
